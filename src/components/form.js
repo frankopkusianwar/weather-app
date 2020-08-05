@@ -6,12 +6,12 @@ const renderForm = () => {
   formGroup.setAttribute('class', 'form-group')
   const formInput = document.createElement('input')
   formInput.setAttribute('type', 'text')
-  formInput.setAttribute('class', 'form-control')
+  formInput.setAttribute('class', 'form-control loc')
   formInput.setAttribute('id', 'location')
   formInput.setAttribute('placeholder', 'Enter Location')
   const btn = document.createElement('button')
   btn.setAttribute('type', 'submit')
-  btn.setAttribute('class', 'btn btn-primary mt-2')
+  btn.setAttribute('class', 'btn btn-primary mt-2 submit')
   btn.setAttribute('id', 'submit')
   btn.textContent = 'Submit';
 
