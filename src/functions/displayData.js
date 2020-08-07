@@ -7,13 +7,11 @@ const displayData = () => {
   const submitBtn = document.querySelector('.submit')
   submitBtn.addEventListener('click', (e) => {
     e.preventDefault()
-    validateInpt(inpt.value)
     const res = getData(inpt.value)
     res.then((response) => {
       const data = response.json();
       return data
     }).then((data) => {
-      console.log(data)
       renderContent(data)
     }).catch((error) => {
       console.log(error.message)
