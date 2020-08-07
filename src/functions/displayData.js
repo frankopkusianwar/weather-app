@@ -1,22 +1,38 @@
-import getData from './fetchData'
+import { getData, getFarenheight } from './fetchData'
 import validateInpt from './validateInput'
+import getElements from '../components/elements'
 import renderContent from '../components/weatherContent'
+
 const displayData = () => {
-  const p = document.querySelector('p')
-  const inpt = document.querySelector('.loc')
-  const submitBtn = document.querySelector('.submit')
+  const { submitBtn, inpt} = getElements();
   submitBtn.addEventListener('click', (e) => {
     e.preventDefault()
-    const res = getData(inpt.value)
-    res.then((response) => {
-      const data = response.json();
-      return data
-    }).then((data) => {
-      renderContent(data)
-    }).catch((error) => {
-      console.log(error.message)
-    })
+    renderCelcius()
   })
+  const renderCelcius = () => {
+    const celcuisResponse = getData(inpt.value)
+    celcuisResponse.then((data) => {
+      renderContent(data, '°C')
+      const { btns } = getElements();
+      toggleBtns(btns)
+    })
+  }
+  const renderFaren = () => {
+      const farenResponse = getFarenheight(inpt.value)
+      farenResponse.then((data) => {
+        renderContent(data, '°F')
+        const { btns } = getElements();
+        toggleBtns(btns)
+      })
+    }
+    
+  const toggleBtns = (btns) => {
+    btns.forEach(bt => {
+      bt.addEventListener('click', () => {
+        bt.textContent == 'Celcius' ? renderCelcius() : renderFaren()
+      })
+    })
+  }
 }
 
 export default displayData

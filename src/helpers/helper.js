@@ -20,7 +20,7 @@ const setAttributesForInput = (tag, type, placeholder, id, content) => {
   return tag;
 }
 
-const apendChildren = (mainDiv, p1, p2, p3, p4, p5, h5, h3) => {
+const apendChildren = (mainDiv, p1, p2, p3, p4, p5, h5, h3, btnDiv, btn1, btn2) => {
   mainDiv.appendChild(h5)
   mainDiv.appendChild(h3)
   mainDiv.appendChild(p1)
@@ -28,6 +28,10 @@ const apendChildren = (mainDiv, p1, p2, p3, p4, p5, h5, h3) => {
   mainDiv.appendChild(p3)
   mainDiv.appendChild(p4)
   mainDiv.appendChild(p5)
+  btnDiv.appendChild(btn1)
+  btnDiv.appendChild(btn2)
+  mainDiv.appendChild(btnDiv)
+
 }
 
 export { createElementWithAttributes, setAttributesForElements, apendChildren, setAttributesForInput }
