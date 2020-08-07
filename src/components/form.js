@@ -1,6 +1,6 @@
 const renderForm = () => {
   const formDiv = document.querySelector('.form-fields')
-  formDiv.setAttribute('class', 'mt-5')
+  formDiv.setAttribute('class', 'mt-5 bg-light w-50 p-3 mx-auto')
   const form = document.createElement('form')
   const formGroup = document.createElement('div')
   formGroup.setAttribute('class', 'form-group')
