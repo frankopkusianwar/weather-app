@@ -1,13 +1,22 @@
 const createElementWithAttributes = (tag, className, content) => {
   const element = document.createElement(tag);
   element.setAttribute('class', className);
-  // element.setAttribute('style', style);
   element.textContent = content
   return element;
 }
 
 const setAttributesForElements = (tag, className) => {
   tag.setAttribute('class', className);
+  return tag;
+}
+
+const setAttributesForInput = (tag, type, placeholder, id, content) => {
+  tag.setAttribute('type', type);
+  tag.setAttribute('placeholder', placeholder);
+  tag.setAttribute('id', id);
+  if (content != '') {
+    tag.textContent = content
+  }
   return tag;
 }
 
@@ -21,4 +30,4 @@ const apendChildren = (mainDiv, p1, p2, p3, p4, p5, h5, h3) => {
   mainDiv.appendChild(p5)
 }
 
-export { createElementWithAttributes, setAttributesForElements, apendChildren }
+export { createElementWithAttributes, setAttributesForElements, apendChildren, setAttributesForInput }

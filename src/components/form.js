@@ -1,20 +1,15 @@
-const renderForm = () => {
-  const formDiv = document.querySelector('.form-fields')
-  formDiv.setAttribute('class', 'mt-5 bg-light w-50 p-3 mx-auto')
-  const form = document.createElement('form')
-  const formGroup = document.createElement('div')
-  formGroup.setAttribute('class', 'form-group')
-  const formInput = document.createElement('input')
-  formInput.setAttribute('type', 'text')
-  formInput.setAttribute('class', 'form-control loc')
-  formInput.setAttribute('id', 'location')
-  formInput.setAttribute('placeholder', 'Enter Location')
-  const btn = document.createElement('button')
-  btn.setAttribute('type', 'submit')
-  btn.setAttribute('class', 'btn btn-primary mt-2 submit')
-  btn.setAttribute('id', 'submit')
-  btn.textContent = 'Submit';
+import getElements from './elements'
+import { createElementWithAttributes, setAttributesForElements, apendChildren, setAttributesForInput } from '../helpers/helper'
 
+const renderForm = () => {
+  const { formDiv } = getElements();
+  setAttributesForElements(formDiv, 'mt-5 bg-light w-50 p-3 mx-auto')
+  const form = createElementWithAttributes('form', 'form')
+  const formGroup = createElementWithAttributes('div', 'form-group')
+  const formInput = createElementWithAttributes('input', 'form-control loc')
+  setAttributesForInput(formInput, 'text', 'Enter City Name', 'location', '')
+  const btn = createElementWithAttributes('button', 'btn btn-primary mt-2 submit')
+  setAttributesForInput(btn, 'submit', '', 'submit', 'Submit')
   
   formGroup.appendChild(formInput)
   formGroup.appendChild(btn)
@@ -23,14 +18,3 @@ const renderForm = () => {
 }
 
 export default renderForm
-
-
-
-
-
-/* <form>
-      <div class="form-group">
-        <input type="text" class="form-control" id="location">
-      </div>
-      <button type="submit" class="btn btn-primary" id="submit">Submit</button>
-    </form> */
