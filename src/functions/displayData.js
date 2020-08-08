@@ -8,13 +8,12 @@ import renderContent from '../components/weatherContent';
 
 const displayData = () => {
   const { submitBtn, inpt } = getElements();
-  const toggleBtns = (btns) => {
-    btns.forEach(bt => {
-      bt.addEventListener('click', () => {
-        (bt.textContent === 'Celcius') ? renderCelcius() : renderFaren();
-      });
-    });
-  };
+  submitBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    localStorage.setItem('cname', inpt.value);
+    renderCelcius();
+    inpt.value = '';
+  });
   const renderCelcius = () => {
     const cityname = localStorage.getItem('cname');
     const celcuisResponse = getData(cityname, 'metric');
@@ -26,12 +25,6 @@ const displayData = () => {
       validateInpt();
     });
   };
-  submitBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    localStorage.setItem('cname', inpt.value);
-    renderCelcius();
-    inpt.value = '';
-  });
   const renderFaren = () => {
     const fname = localStorage.getItem('cname');
     const farenResponse = getData(fname, 'imperial');
@@ -39,6 +32,14 @@ const displayData = () => {
       renderContent(data, '°F');
       const { btns } = getElements();
       toggleBtns(btns);
+    });
+  };
+
+  const toggleBtns = (btns) => {
+    btns.forEach(bt => {
+      bt.addEventListener('click', () => {
+        bt.textContent === 'Celcius' ? renderCelcius() : renderFaren();
+      });
     });
   };
 };
