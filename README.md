@@ -10,15 +10,15 @@ In this project I built a simple weather app showcasing the use of promises whil
 - Click submit or press enter to view the weather details
 
 ## Home page
-![screenshot]()
+![screenshot](./screenshots/home.PNG)
 
 ## Cloudy weather
 
-![screenshot]()
+![screenshot](./screenshots/cloud.PNG)
 
 ## Clear weather
 
-![screenshot]()
+![screenshot](./screenshots/clear.PNG)
 
 
 ## Built With
