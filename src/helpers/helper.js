@@ -35,7 +35,6 @@ const apendChildren = (mainDiv, p1, p2, p3, p4, p5, h5, h3, btnDiv, btn1, btn2) 
 }
 
 const setBodyBackground = (data, bdy) => {
-  console.log(data)
   if (data === 'Clouds') {
     bdy.setAttribute('class', 'clouds')
   }

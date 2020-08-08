@@ -1,5 +1,5 @@
 import { getData, getFarenheight } from './fetchData'
-import validateInpt from './validateInput'
+import validateInpt from '../components/validateInput'
 import getElements from '../components/elements'
 import renderContent from '../components/weatherContent'
 
@@ -15,6 +15,8 @@ const displayData = () => {
       renderContent(data, '°C')
       const { btns } = getElements();
       toggleBtns(btns)
+    }).catch(() => {
+      alert('city not found')
     })
   }
   const renderFaren = () => {
@@ -23,6 +25,8 @@ const displayData = () => {
       renderContent(data, '°F')
       const { btns } = getElements();
       toggleBtns(btns)
+    }).catch(() => {
+      console.log('city not found')
     })
   }
     
