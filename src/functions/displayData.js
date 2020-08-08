@@ -16,7 +16,7 @@ const displayData = () => {
       const { btns } = getElements();
       toggleBtns(btns)
     }).catch(() => {
-      alert('city not found')
+      validateInpt()
     })
   }
   const renderFaren = () => {
@@ -25,8 +25,6 @@ const displayData = () => {
       renderContent(data, '°F')
       const { btns } = getElements();
       toggleBtns(btns)
-    }).catch(() => {
-      console.log('city not found')
     })
   }
     
