@@ -4,7 +4,7 @@ const getElements = () => ({
   mainDiv: document.querySelector('.content'),
   inpt: document.querySelector('.loc'),
   submitBtn: document.querySelector('.submit'),
-  btns: document.querySelectorAll('.btns')
+  btns: document.querySelectorAll('.btns'),
 });
 
-export default getElements
+export default getElements;
