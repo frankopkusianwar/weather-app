@@ -32,7 +32,7 @@ In this project I built a simple weather app showcasing the use of promises whil
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://raw.githack.com/frankopkusianwar/weather-app/featrure-weather/dist/index.html)
 
 ## Getting Started
 
