@@ -1,10 +1,11 @@
 import getElements from './elements'
-import { createElementWithAttributes, setAttributesForElements, apendChildren } from '../helpers/helper'
+import { createElementWithAttributes, setAttributesForElements, apendChildren, setBodyBackground } from '../helpers/helper'
 
-const { mainDiv } = getElements();
+const { mainDiv, body } = getElements();
 
 const renderContent = (data, str) => {
   mainDiv.textContent = ''
+  setBodyBackground(data.weather[0].main, body)
   setAttributesForElements(mainDiv, 'bg-light p-3 mx-auto w-50 text-center')
   const h3 = createElementWithAttributes('h3', 'main', `${data.main.temp_max} ${str}`)
   const h5 = createElementWithAttributes('h5', 'main', `${data.name}`)

@@ -18,13 +18,13 @@ const displayData = () => {
     })
   }
   const renderFaren = () => {
-      const farenResponse = getFarenheight(inpt.value)
-      farenResponse.then((data) => {
-        renderContent(data, '°F')
-        const { btns } = getElements();
-        toggleBtns(btns)
-      })
-    }
+    const farenResponse = getFarenheight(inpt.value)
+    farenResponse.then((data) => {
+      renderContent(data, '°F')
+      const { btns } = getElements();
+      toggleBtns(btns)
+    })
+  }
     
   const toggleBtns = (btns) => {
     btns.forEach(bt => {

@@ -1,4 +1,5 @@
 const getElements = () => ({
+  body: document.querySelector('body'),
   formDiv: document.querySelector('.form-fields'),
   mainDiv: document.querySelector('.content'),
   inpt: document.querySelector('.loc'),
